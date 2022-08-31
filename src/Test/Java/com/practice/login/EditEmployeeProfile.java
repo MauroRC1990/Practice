@@ -42,6 +42,9 @@ public class EditEmployeeProfile {
         homeWebPage.selectGender();
         homeWebPage.setMilitaryService("Quartermaster");
         homeWebPage.saveButton();
+        homeWebPage.selectBloodTypeMenu();
+        homeWebPage.selectBloodType();
+        homeWebPage.saveButton2();
 
 
         homeWebPage.selectContactDetails();

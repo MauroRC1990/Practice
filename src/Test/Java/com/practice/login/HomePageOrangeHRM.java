@@ -34,6 +34,12 @@ public class HomePageOrangeHRM {
 
     String saveButtonXpath = "//button[@type='submit']";
 
+    String bloodTypeMenuXpath = "//label[text()='Blood Type']//following::div[@class='oxd-select-text oxd-select-text--active']";
+
+    String bloodTypeXpath = "//span[text()='O+']//parent::div";
+
+    String saveButton2Xpath = "//h6[text()='Custom Fields']//following::button[@type='submit']";
+
     String trashCanXpath = "//div[text()='Hermann Pirate']//ancestor::div[contains(@class,'oxd-table-card')]//i[@class='oxd-icon bi-trash']";
 
     String confirmDeleteEmployeePopUpXpath = "//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-button-margin']";
@@ -119,6 +125,18 @@ public class HomePageOrangeHRM {
     public void saveButton() {
         WebElement save = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(saveButtonXpath)));
         save.click();
+    }
+    public void selectBloodTypeMenu() {
+        WebElement bloodTypeMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(bloodTypeMenuXpath)));
+        bloodTypeMenu.click();
+    }
+    public void selectBloodType() {
+        WebElement bloodType = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(bloodTypeXpath)));
+        bloodType.click();
+    }
+    public void saveButton2() {
+        WebElement save2 = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(saveButton2Xpath)));
+        save2.click();
     }
     public void trashCan() {
         WebElement delete = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(trashCanXpath)));
