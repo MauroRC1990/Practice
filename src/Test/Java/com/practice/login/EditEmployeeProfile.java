@@ -52,6 +52,8 @@ public class EditEmployeeProfile {
 
         homeWebPage.setStreet1("221B Baker Street");
         homeWebPage.setStateProvince("Monkey Island");
+        homeWebPage.setZipOrPostalCode("2709");
+        homeWebPage.setTelephoneHome("555-0001");
         homeWebPage.saveButton();
 
 

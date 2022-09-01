@@ -78,6 +78,10 @@ public class HomePageOrangeHRM {
 
     String stateProvinceXpath = "//label[text()='State/Province']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//input";
 
+    String zipOrPostalCodeXpath = "//label[text()='Zip/Postal Code']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::input[@class='oxd-input oxd-input--active']";
+
+    String telephoneHomeXpath = "//label[text()='Home']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::input";
+
     Wait<WebDriver> wait;
 
     public void selectAddEmployee() {
@@ -242,5 +246,17 @@ public class HomePageOrangeHRM {
         stateOrProvince.sendKeys(Keys.CONTROL + "a");
         stateOrProvince.sendKeys(Keys.DELETE);
         stateOrProvince.sendKeys(stateProvince);
+    }
+    public void setZipOrPostalCode(String zipOrPostalCodeNumber) {
+        WebElement zipOrPostalCode = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(zipOrPostalCodeXpath)));
+        zipOrPostalCode.sendKeys(Keys.CONTROL + "a");
+        zipOrPostalCode.sendKeys(Keys.DELETE);
+        zipOrPostalCode.sendKeys(zipOrPostalCodeNumber);
+    }
+    public void setTelephoneHome(String telephoneHome) {
+        WebElement telephoneHomeNumber = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(telephoneHomeXpath)));
+        telephoneHomeNumber.sendKeys(Keys.CONTROL + "a");
+        telephoneHomeNumber.sendKeys(Keys.DELETE);
+        telephoneHomeNumber.sendKeys(telephoneHome);
     }
 }
