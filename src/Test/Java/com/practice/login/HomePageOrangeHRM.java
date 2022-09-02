@@ -72,7 +72,7 @@ public class HomePageOrangeHRM {
 
     String militaryServiceXpath = "//label[text()='Military Service']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::div[@class]//child::input";
 
-    String contactDetailsXpath = "//a[@class='orangehrm-tabs-item']";
+    String contactDetailsXpath = "//a[text()='Contact Details']";
 
     String street1Xpath = "//label[text()='Street 1']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//input";
 
@@ -81,6 +81,12 @@ public class HomePageOrangeHRM {
     String zipOrPostalCodeXpath = "//label[text()='Zip/Postal Code']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::input[@class='oxd-input oxd-input--active']";
 
     String telephoneHomeXpath = "//label[text()='Home']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::input";
+
+    String workEmailXpath = "//label[text()='Work Email']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//input";
+
+    String selectJobXpath = "//a[text()='Job']";
+
+    String selectJoinedDateXpath = "//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//i";
 
     Wait<WebDriver> wait;
 
@@ -258,5 +264,33 @@ public class HomePageOrangeHRM {
         telephoneHomeNumber.sendKeys(Keys.CONTROL + "a");
         telephoneHomeNumber.sendKeys(Keys.DELETE);
         telephoneHomeNumber.sendKeys(telephoneHome);
+    }
+    public void setWorkEmail(String workEmail) {
+        WebElement workEmailField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(workEmailXpath)));
+        workEmailField.sendKeys(Keys.CONTROL + "a");
+        workEmailField.sendKeys(Keys.DELETE);
+        workEmailField.sendKeys(workEmail);
+    }
+    public void selectJob() {
+        try {
+            Thread.sleep(2500);
+        } catch (Exception exp) {
+            System.out.println(exp.getCause());
+            System.out.println(exp.getMessage());
+            exp.printStackTrace();
+        }
+        WebElement job = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJobXpath)));
+        job.click();
+    }
+    public void selectJoinedDate () {
+        WebElement joinedDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJoinedDateXpath)));
+        try {
+            Thread.sleep(3000);
+        } catch (Exception exp) {
+            System.out.println(exp.getCause());
+            System.out.println(exp.getMessage());
+            exp.printStackTrace();
+        }
+        joinedDate.click();
     }
 }

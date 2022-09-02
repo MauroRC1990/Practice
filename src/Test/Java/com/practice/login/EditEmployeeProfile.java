@@ -54,8 +54,19 @@ public class EditEmployeeProfile {
         homeWebPage.setStateProvince("Monkey Island");
         homeWebPage.setZipOrPostalCode("2709");
         homeWebPage.setTelephoneHome("555-0001");
+//        homeWebPage.setWorkEmail("HermannToothrot@monkeymail.com");
         homeWebPage.saveButton();
 
+
+        homeWebPage.selectJob();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//i")));
+        homeWebPage.selectJoinedDate();
+        homeWebPage.selectCalendarMonthMenu();
+        homeWebPage.selectMonth();
+        homeWebPage.selectCalendarYearMenu();
+        homeWebPage.selectYear();
+        homeWebPage.selectDay();
+        homeWebPage.saveButton();
 
         String successfullyUpdatedMsgXpath = "//*[text()='Successfully Updated']";
         WebElement validateUpdated = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullyUpdatedMsgXpath)));
