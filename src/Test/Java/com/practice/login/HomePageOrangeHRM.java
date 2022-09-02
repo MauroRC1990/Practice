@@ -88,6 +88,9 @@ public class HomePageOrangeHRM {
 
     String selectJoinedDateXpath = "//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//i";
 
+    String selectJobTitleXpath = "//label[text()='Job Title']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
+
+    String selectSupportSpecialistXpath = "//span[text()='Support Specialist']";
     Wait<WebDriver> wait;
 
     public void selectAddEmployee() {
@@ -292,5 +295,14 @@ public class HomePageOrangeHRM {
             exp.printStackTrace();
         }
         joinedDate.click();
+    }
+    public void selectJobTitle() {
+        WebElement jobTitleMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJobTitleXpath)));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", jobTitleMenu);
+        jobTitleMenu.click();
+    }
+    public void selectSupportSpecialist() {
+        WebElement supportSpecialist = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectSupportSpecialistXpath)));
+        supportSpecialist.click();
     }
 }

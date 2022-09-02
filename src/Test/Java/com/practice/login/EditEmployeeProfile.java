@@ -66,6 +66,8 @@ public class EditEmployeeProfile {
         homeWebPage.selectCalendarYearMenu();
         homeWebPage.selectYear();
         homeWebPage.selectDay();
+        homeWebPage.selectJobTitle();
+        homeWebPage.selectSupportSpecialist();
         homeWebPage.saveButton();
 
         String successfullyUpdatedMsgXpath = "//*[text()='Successfully Updated']";
