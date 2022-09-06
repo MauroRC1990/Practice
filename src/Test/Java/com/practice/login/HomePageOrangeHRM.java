@@ -82,6 +82,12 @@ public class HomePageOrangeHRM {
 
     String telephoneHomeXpath = "//label[text()='Home']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::input";
 
+    String jobXpath = "//a[text()='Job']";
+
+    String jobTitleMenuXpath = "//label[text()='Job Title']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-text oxd-select-text--active']";
+
+    String supportSpecialistXpath = "//span[text()='Support Specialist']";
+
     Wait<WebDriver> wait;
 
     public void selectAddEmployee() {
@@ -258,5 +264,17 @@ public class HomePageOrangeHRM {
         telephoneHomeNumber.sendKeys(Keys.CONTROL + "a");
         telephoneHomeNumber.sendKeys(Keys.DELETE);
         telephoneHomeNumber.sendKeys(telephoneHome);
+    }
+    public void selectJob() {
+        WebElement selectJob = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(jobXpath)));
+        selectJob.click();
+    }
+    public void selectJobTitleMenu() {
+        WebElement jobTitleMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(jobTitleMenuXpath)));
+        jobTitleMenu.click();
+    }
+    public void selectSupportSpecialist() {
+        WebElement supportSpecialist = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(supportSpecialistXpath)));
+        supportSpecialist.click();
     }
 }

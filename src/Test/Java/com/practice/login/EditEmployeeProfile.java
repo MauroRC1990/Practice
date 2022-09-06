@@ -57,6 +57,14 @@ public class EditEmployeeProfile {
         homeWebPage.saveButton();
 
 
+        homeWebPage.selectJob();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Joined Date']")));
+
+        homeWebPage.selectJobTitleMenu();
+        homeWebPage.selectSupportSpecialist();
+        homeWebPage.saveButton();
+
+
         String successfullyUpdatedMsgXpath = "//*[text()='Successfully Updated']";
         WebElement validateUpdated = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullyUpdatedMsgXpath)));
         if (validateUpdated.isDisplayed()) {
