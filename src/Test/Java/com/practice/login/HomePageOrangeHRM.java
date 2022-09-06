@@ -82,24 +82,15 @@ public class HomePageOrangeHRM {
 
     String telephoneHomeXpath = "//label[text()='Home']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::input";
 
-<<<<<<< HEAD
-    String workEmailXpath = "//label[text()='Work Email']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//input";
-
     String selectJobXpath = "//a[text()='Job']";
 
     String selectJoinedDateXpath = "//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//i";
 
     String selectJobTitleXpath = "//label[text()='Job Title']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
 
-    String selectSupportSpecialistXpath = "//span[text()='Support Specialist']";
-=======
-    String jobXpath = "//a[text()='Job']";
-
-    String jobTitleMenuXpath = "//label[text()='Job Title']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-text oxd-select-text--active']";
-
     String supportSpecialistXpath = "//span[text()='Support Specialist']";
 
->>>>>>> master
+
     Wait<WebDriver> wait;
 
     public void selectAddEmployee() {
@@ -277,13 +268,6 @@ public class HomePageOrangeHRM {
         telephoneHomeNumber.sendKeys(Keys.DELETE);
         telephoneHomeNumber.sendKeys(telephoneHome);
     }
-<<<<<<< HEAD
-    public void setWorkEmail(String workEmail) {
-        WebElement workEmailField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(workEmailXpath)));
-        workEmailField.sendKeys(Keys.CONTROL + "a");
-        workEmailField.sendKeys(Keys.DELETE);
-        workEmailField.sendKeys(workEmail);
-    }
     public void selectJob() {
         try {
             Thread.sleep(2500);
@@ -297,34 +281,15 @@ public class HomePageOrangeHRM {
     }
     public void selectJoinedDate () {
         WebElement joinedDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJoinedDateXpath)));
-        try {
-            Thread.sleep(3000);
-        } catch (Exception exp) {
-            System.out.println(exp.getCause());
-            System.out.println(exp.getMessage());
-            exp.printStackTrace();
-        }
         joinedDate.click();
     }
-    public void selectJobTitle() {
+    public void selectJobTitleMenu() {
         WebElement jobTitleMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJobTitleXpath)));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", jobTitleMenu);
         jobTitleMenu.click();
     }
     public void selectSupportSpecialist() {
-        WebElement supportSpecialist = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectSupportSpecialistXpath)));
-=======
-    public void selectJob() {
-        WebElement selectJob = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(jobXpath)));
-        selectJob.click();
-    }
-    public void selectJobTitleMenu() {
-        WebElement jobTitleMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(jobTitleMenuXpath)));
-        jobTitleMenu.click();
-    }
-    public void selectSupportSpecialist() {
         WebElement supportSpecialist = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(supportSpecialistXpath)));
->>>>>>> master
         supportSpecialist.click();
     }
 }

@@ -54,32 +54,22 @@ public class EditEmployeeProfile {
         homeWebPage.setStateProvince("Monkey Island");
         homeWebPage.setZipOrPostalCode("2709");
         homeWebPage.setTelephoneHome("555-0001");
-//        homeWebPage.setWorkEmail("HermannToothrot@monkeymail.com");
         homeWebPage.saveButton();
 
-
         homeWebPage.selectJob();
-<<<<<<< HEAD
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//i")));
+
         homeWebPage.selectJoinedDate();
         homeWebPage.selectCalendarMonthMenu();
         homeWebPage.selectMonth();
         homeWebPage.selectCalendarYearMenu();
         homeWebPage.selectYear();
         homeWebPage.selectDay();
-        homeWebPage.selectJobTitle();
-        homeWebPage.selectSupportSpecialist();
-        homeWebPage.saveButton();
-
-=======
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Joined Date']")));
-
         homeWebPage.selectJobTitleMenu();
         homeWebPage.selectSupportSpecialist();
         homeWebPage.saveButton();
 
 
->>>>>>> master
         String successfullyUpdatedMsgXpath = "//*[text()='Successfully Updated']";
         WebElement validateUpdated = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullyUpdatedMsgXpath)));
         if (validateUpdated.isDisplayed()) {
