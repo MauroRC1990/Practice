@@ -82,6 +82,7 @@ public class HomePageOrangeHRM {
 
     String telephoneHomeXpath = "//label[text()='Home']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//child::input";
 
+<<<<<<< HEAD
     String workEmailXpath = "//label[text()='Work Email']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//input";
 
     String selectJobXpath = "//a[text()='Job']";
@@ -91,6 +92,14 @@ public class HomePageOrangeHRM {
     String selectJobTitleXpath = "//label[text()='Job Title']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
 
     String selectSupportSpecialistXpath = "//span[text()='Support Specialist']";
+=======
+    String jobXpath = "//a[text()='Job']";
+
+    String jobTitleMenuXpath = "//label[text()='Job Title']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-text oxd-select-text--active']";
+
+    String supportSpecialistXpath = "//span[text()='Support Specialist']";
+
+>>>>>>> master
     Wait<WebDriver> wait;
 
     public void selectAddEmployee() {
@@ -268,6 +277,7 @@ public class HomePageOrangeHRM {
         telephoneHomeNumber.sendKeys(Keys.DELETE);
         telephoneHomeNumber.sendKeys(telephoneHome);
     }
+<<<<<<< HEAD
     public void setWorkEmail(String workEmail) {
         WebElement workEmailField = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(workEmailXpath)));
         workEmailField.sendKeys(Keys.CONTROL + "a");
@@ -303,6 +313,18 @@ public class HomePageOrangeHRM {
     }
     public void selectSupportSpecialist() {
         WebElement supportSpecialist = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectSupportSpecialistXpath)));
+=======
+    public void selectJob() {
+        WebElement selectJob = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(jobXpath)));
+        selectJob.click();
+    }
+    public void selectJobTitleMenu() {
+        WebElement jobTitleMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(jobTitleMenuXpath)));
+        jobTitleMenu.click();
+    }
+    public void selectSupportSpecialist() {
+        WebElement supportSpecialist = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(supportSpecialistXpath)));
+>>>>>>> master
         supportSpecialist.click();
     }
 }

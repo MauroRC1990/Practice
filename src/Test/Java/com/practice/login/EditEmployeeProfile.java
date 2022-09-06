@@ -59,6 +59,7 @@ public class EditEmployeeProfile {
 
 
         homeWebPage.selectJob();
+<<<<<<< HEAD
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//i")));
         homeWebPage.selectJoinedDate();
         homeWebPage.selectCalendarMonthMenu();
@@ -70,6 +71,15 @@ public class EditEmployeeProfile {
         homeWebPage.selectSupportSpecialist();
         homeWebPage.saveButton();
 
+=======
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//label[text()='Joined Date']")));
+
+        homeWebPage.selectJobTitleMenu();
+        homeWebPage.selectSupportSpecialist();
+        homeWebPage.saveButton();
+
+
+>>>>>>> master
         String successfullyUpdatedMsgXpath = "//*[text()='Successfully Updated']";
         WebElement validateUpdated = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullyUpdatedMsgXpath)));
         if (validateUpdated.isDisplayed()) {
