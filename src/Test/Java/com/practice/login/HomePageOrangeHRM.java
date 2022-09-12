@@ -90,6 +90,13 @@ public class HomePageOrangeHRM {
 
     String supportSpecialistXpath = "//span[text()='Support Specialist']";
 
+    String selectJobCategoryXpath = "//label[text()='Job Category']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
+
+    String laborersAndHelpersXpath = "//span[text()='Laborers and Helpers']";
+
+    String selectSubUnitXpath = "//label[text()='Sub Unit']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
+
+    String selectHumanResourcesXpath = "//span[text()='Human Resources']";
 
     Wait<WebDriver> wait;
 
@@ -281,6 +288,7 @@ public class HomePageOrangeHRM {
     }
     public void selectJoinedDate () {
         WebElement joinedDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJoinedDateXpath)));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", joinedDate);
         joinedDate.click();
     }
     public void selectJobTitleMenu() {
@@ -291,5 +299,22 @@ public class HomePageOrangeHRM {
     public void selectSupportSpecialist() {
         WebElement supportSpecialist = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(supportSpecialistXpath)));
         supportSpecialist.click();
+    }
+    public void selectJobCategory() {
+        WebElement jobCategoryMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJobCategoryXpath)));
+        ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", jobCategoryMenu);
+        jobCategoryMenu.click();
+    }
+    public void selectLaborersAndHelpers() {
+        WebElement laborersAndHelpers = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(laborersAndHelpersXpath)));
+        laborersAndHelpers.click();
+    }
+    public void selectSubUnit() {
+        WebElement subUnitMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectSubUnitXpath)));
+        subUnitMenu.click();
+    }
+    public void selectHumanResources() {
+        WebElement humanResources = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectHumanResourcesXpath)));
+        humanResources.click();
     }
 }

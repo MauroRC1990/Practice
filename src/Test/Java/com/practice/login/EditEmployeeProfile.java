@@ -67,6 +67,10 @@ public class EditEmployeeProfile {
         homeWebPage.selectDay();
         homeWebPage.selectJobTitleMenu();
         homeWebPage.selectSupportSpecialist();
+        homeWebPage.selectJobCategory();
+        homeWebPage.selectLaborersAndHelpers();
+        homeWebPage.selectSubUnit();
+        homeWebPage.selectHumanResources();
         homeWebPage.saveButton();
 
 
