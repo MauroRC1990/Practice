@@ -84,7 +84,7 @@ public class HomePageOrangeHRM {
 
     String selectJobXpath = "//a[text()='Job']";
 
-    String selectJoinedDateXpath = "//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//i";
+    String selectJoinedDateXpath = "//label[text()='Joined Date']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-date-input']";
 
     String selectJobTitleXpath = "//label[text()='Job Title']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
 
@@ -105,6 +105,19 @@ public class HomePageOrangeHRM {
     String selectEmploymentStatusXpath = "//label[text()='Employment Status']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
 
     String selectFullTimePermanentXpath = "//span[text()='Full-Time Permanent']";
+
+    String selectReportToXpath = "//a[text()='Report-to']";
+
+    String selectAddXpath = "//h6[text()='Assigned Supervisors']//parent::div//button";
+
+    String nameXpath = "//label[text()='Name']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//input";
+
+    String selectCecilBonaparteXpath = "//span[text()='Cecil  Bonaparte']";
+
+    String selectReportingMethodXpath = "//label[text()='Reporting Method']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-text oxd-select-text--active']";
+
+    String selectIndirectXpath = "//span[text()='Indirect']";
+
 
     Wait<WebDriver> wait;
 
@@ -295,6 +308,13 @@ public class HomePageOrangeHRM {
         job.click();
     }
     public void selectJoinedDate () {
+        try {
+            Thread.sleep(2500);
+        } catch (Exception exp) {
+            System.out.println(exp.getCause());
+            System.out.println(exp.getMessage());
+            exp.printStackTrace();
+        }
         WebElement joinedDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJoinedDateXpath)));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", joinedDate);
         joinedDate.click();
@@ -340,5 +360,36 @@ public class HomePageOrangeHRM {
     public void selectFullTimePermanent() {
         WebElement fullTimePermanent = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectFullTimePermanentXpath)));
         fullTimePermanent.click();
+    }
+    public void selectReportTo() {
+        try {
+            Thread.sleep(2500);
+        } catch (Exception exp) {
+            System.out.println(exp.getCause());
+            System.out.println(exp.getMessage());
+            exp.printStackTrace();
+        }
+        WebElement reportTo = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectReportToXpath)));
+        reportTo.click();
+    }
+    public void selectAdd() {
+        WebElement add = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectAddXpath)));
+        add.click();
+    }
+    public void name(String name) {
+        WebElement typeName = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(nameXpath)));
+        typeName.sendKeys(name);
+    }
+    public void selectCecilBonaparte() {
+        WebElement cecilBonaparte = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectCecilBonaparteXpath)));
+        cecilBonaparte.click();
+    }
+    public void selectReportingMethod() {
+        WebElement reportingMethodMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectReportingMethodXpath)));
+        reportingMethodMenu.click();
+    }
+    public void selectIndirect() {
+        WebElement indirect = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectIndirectXpath)));
+        indirect.click();
     }
 }

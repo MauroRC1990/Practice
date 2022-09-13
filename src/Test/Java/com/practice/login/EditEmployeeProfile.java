@@ -73,18 +73,32 @@ public class EditEmployeeProfile {
         homeWebPage.selectHumanResources();
         homeWebPage.selectLocation();
         homeWebPage.selectCanadianRegionalHQ();
-        homeWebPage.selectEmploymentStatus();
-        homeWebPage.selectFullTimePermanent();
+//        homeWebPage.selectEmploymentStatus();
+//        homeWebPage.selectFullTimePermanent();
+        homeWebPage.saveButton();
+
+        homeWebPage.selectReportTo();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//h6[text()='Assigned Supervisors']")));
+
+        homeWebPage.selectAdd();
+        homeWebPage.name("c");
+        homeWebPage.selectCecilBonaparte();
+        homeWebPage.selectReportingMethod();
+        homeWebPage.selectIndirect();
         homeWebPage.saveButton();
 
 
-        String successfullyUpdatedMsgXpath = "//*[text()='Successfully Updated']";
-        WebElement validateUpdated = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullyUpdatedMsgXpath)));
-        if (validateUpdated.isDisplayed()) {
+
+        String successfullySavedMsgXpath = "//*[text()='Successfully Saved']";
+        WebElement validateSaved = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullySavedMsgXpath)));
+        if (validateSaved.isDisplayed()){
             System.out.println("Successful case");
         }else {
             System.out.println("Failed case");
         }
+
+
+
 
         driver.close();
         driver.quit();
