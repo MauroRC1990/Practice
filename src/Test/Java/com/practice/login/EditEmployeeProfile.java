@@ -71,6 +71,10 @@ public class EditEmployeeProfile {
         homeWebPage.selectLaborersAndHelpers();
         homeWebPage.selectSubUnit();
         homeWebPage.selectHumanResources();
+        homeWebPage.selectLocation();
+        homeWebPage.selectCanadianRegionalHQ();
+        homeWebPage.selectEmploymentStatus();
+        homeWebPage.selectFullTimePermanent();
         homeWebPage.saveButton();
 
 

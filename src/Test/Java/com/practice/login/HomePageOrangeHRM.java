@@ -98,6 +98,14 @@ public class HomePageOrangeHRM {
 
     String selectHumanResourcesXpath = "//span[text()='Human Resources']";
 
+    String selectLocationXpath = "//label[text()='Location']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
+
+    String selectCanadianRegionalHQXpath = "//span[text()='Canadian Regional HQ']";
+
+    String selectEmploymentStatusXpath = "//label[text()='Employment Status']//ancestor::div[@class='oxd-input-group oxd-input-field-bottom-space']//div[@class='oxd-select-wrapper']";
+
+    String selectFullTimePermanentXpath = "//span[text()='Full-Time Permanent']";
+
     Wait<WebDriver> wait;
 
     public void selectAddEmployee() {
@@ -316,5 +324,21 @@ public class HomePageOrangeHRM {
     public void selectHumanResources() {
         WebElement humanResources = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectHumanResourcesXpath)));
         humanResources.click();
+    }
+    public void selectLocation() {
+        WebElement locationMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectLocationXpath)));
+        locationMenu.click();
+    }
+    public void selectCanadianRegionalHQ() {
+        WebElement canadianRegionalHQ = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectCanadianRegionalHQXpath)));
+        canadianRegionalHQ.click();
+    }
+    public void selectEmploymentStatus() {
+        WebElement employmentStatusMenu = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectEmploymentStatusXpath)));
+        employmentStatusMenu.click();
+    }
+    public void selectFullTimePermanent() {
+        WebElement fullTimePermanent = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectFullTimePermanentXpath)));
+        fullTimePermanent.click();
     }
 }
