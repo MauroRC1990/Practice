@@ -73,8 +73,8 @@ public class EditEmployeeProfile {
         homeWebPage.selectHumanResources();
         homeWebPage.selectLocation();
         homeWebPage.selectCanadianRegionalHQ();
-//        homeWebPage.selectEmploymentStatus();
-//        homeWebPage.selectFullTimePermanent();
+        homeWebPage.selectEmploymentStatus();
+        homeWebPage.selectFullTimePermanent();
         homeWebPage.saveButton();
 
         homeWebPage.selectReportTo();
@@ -88,16 +88,13 @@ public class EditEmployeeProfile {
         homeWebPage.saveButton();
 
 
-
-        String successfullySavedMsgXpath = "//*[text()='Successfully Saved']";
-        WebElement validateSaved = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullySavedMsgXpath)));
+        String successfullyChangedMsgXpath = "//*[text()='Successfully Updated' or text()='Successfully Saved']";
+        WebElement validateSaved = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(successfullyChangedMsgXpath)));
         if (validateSaved.isDisplayed()){
             System.out.println("Successful case");
         }else {
             System.out.println("Failed case");
         }
-
-
 
 
         driver.close();

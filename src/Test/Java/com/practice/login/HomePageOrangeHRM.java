@@ -315,7 +315,7 @@ public class HomePageOrangeHRM {
             System.out.println(exp.getMessage());
             exp.printStackTrace();
         }
-        WebElement joinedDate = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(selectJoinedDateXpath)));
+        WebElement joinedDate = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(selectJoinedDateXpath)));
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView({block: 'center'});", joinedDate);
         joinedDate.click();
     }
@@ -378,6 +378,8 @@ public class HomePageOrangeHRM {
     }
     public void name(String name) {
         WebElement typeName = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(nameXpath)));
+        typeName.sendKeys(Keys.CONTROL + "a");
+        typeName.sendKeys(Keys.DELETE);
         typeName.sendKeys(name);
     }
     public void selectCecilBonaparte() {
